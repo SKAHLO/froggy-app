@@ -1,5 +1,5 @@
-import "NonFungibleToken" 
-import "MetadataViews" 
+import NonFungibleToken from 0x1d7e57aa55817448
+import MetadataViews from 0x1d7e57aa55817448
 
 access(all) contract AmphibiNFT: NonFungibleToken {
 
@@ -122,7 +122,7 @@ access(all) contract AmphibiNFT: NonFungibleToken {
                         )
                     ])
                 case Type<MetadataViews.ExternalURL>():
-                    return MetadataViews.ExternalURL("https://amphibinft.com/nft/".concat(self.id.toString()))
+                    return MetadataViews.ExternalURL("https://froggy-app.vercel.app/".concat(self.id.toString()))
                 case Type<MetadataViews.NFTCollectionData>():
                     return MetadataViews.NFTCollectionData(
                         storagePath: AmphibiNFT.CollectionStoragePath,
@@ -138,14 +138,14 @@ access(all) contract AmphibiNFT: NonFungibleToken {
                 case Type<MetadataViews.NFTCollectionDisplay>():
                     let media = MetadataViews.Media(
                         file: MetadataViews.HTTPFile(
-                            url: "https://amphibinft.com/logo.png"
+                            url: "https://froggy-app.vercel.app/logo.png"
                         ),
                         mediaType: "image/png"
                     )
                     return MetadataViews.NFTCollectionDisplay(
                         name: "AmphibiNFT Collection",
                         description: "A collection of unique frog and iguana NFTs captured by nature photographers",
-                        externalURL: MetadataViews.ExternalURL("https://amphibinft.com"),
+                        externalURL: MetadataViews.ExternalURL("https://froggy-app.vercel.app/"),
                         squareImage: media,
                         bannerImage: media,
                         socials: {
