@@ -4,7 +4,7 @@ import MetadataViews from 0x631e88ae7f1d7c20
 
 // This script gets the metadata for a specific NFT
 
-pub fun main(account: Address, itemID: UInt64): AmphibiNFT.NFTMetadata? {
+access(all) fun main(account: Address, itemID: UInt64): AmphibiNFT.NFTMetadata? {
     let acct = getAccount(account)
     let collectionRef = acct.getCapability(AmphibiNFT.CollectionPublicPath)
         .borrow<&{AmphibiNFT.AmphibiNFTCollectionPublic}>()

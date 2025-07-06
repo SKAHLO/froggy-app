@@ -3,7 +3,7 @@ import AmphibiNFT from 0x01cf0e2f2f715450
 
 // This script returns an array of all the NFT IDs in an account's collection
 
-pub fun main(account: Address): [UInt64] {
+access(all) fun main(account: Address): [UInt64] {
     let acct = getAccount(account)
     let collectionRef = acct.getCapability(AmphibiNFT.CollectionPublicPath)
         .borrow<&{NonFungibleToken.CollectionPublic}>()
